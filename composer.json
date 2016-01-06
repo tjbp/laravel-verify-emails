@@ -23,5 +23,13 @@
         "phpunit/phpunit": "^4.8"
     },
     "require": {
+        "illuminate/contracts": "^5.0",
+        "illuminate/database": "^5.0",
+        "illuminate/mail": "^5.0",
+        "illuminate/support": "^5.0"
+    },
+    "suggests": {
+        "illuminate/console": "^5.0",
+        "illuminate/http": "^5.0"
     }
 }
