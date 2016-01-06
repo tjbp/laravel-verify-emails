@@ -42,7 +42,7 @@ class AuthenticateAndVerifyEmail
             }
         }
 
-        if (!$this->auth->user()->isVerified()) {
+        if (! $this->auth->user()->isVerified()) {
             if ($request->ajax()) {
                 return response('Unverified email.', 401);
             } else {
