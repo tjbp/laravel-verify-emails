@@ -10,8 +10,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/tjbp/laravel-verify-email/issues",
-        "source": "https://github.com/tjbp/laravel-verify-email"
+        "issues": "https://github.com/tjbp/laravel-verify-emails/issues",
+        "source": "https://github.com/tjbp/laravel-verify-emails"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +20,7 @@
     },
     "require-dev": {
         "mockery/mockery": "^0.9",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^5.1"
     },
     "require": {
     }
