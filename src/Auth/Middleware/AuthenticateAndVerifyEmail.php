@@ -53,4 +53,3 @@ class AuthenticateAndVerifyEmail
         return $next($request);
     }
 }
-
