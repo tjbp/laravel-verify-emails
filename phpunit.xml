@@ -6,7 +6,7 @@
          checkForUnintentionallyCoveredCode="true"
          colors="true">
     <testsuites>
-        <testsuite name="tjbp/laravel-verify-email">
+        <testsuite name="tjbp/laravel-verify-emails">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

@@ -1,5 +1,5 @@
 {
-    "name": "tjbp/laravel-verify-email",
+    "name": "tjbp/laravel-verify-emails",
     "description": "Verify email addresses in a Laravel application.",
     "keywords": ["email", "verify", "verification", "laravel", "illuminate"],
     "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelVerifyEmail\\": "src/"
+            "LaravelVerifyEmails\\": "src/"
         }
     },
     "require-dev": {
