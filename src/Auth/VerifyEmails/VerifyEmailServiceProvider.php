@@ -3,6 +3,7 @@
 namespace LaravelVerifyEmails\Auth\VerifyEmails;
 
 use Illuminate\Support\ServiceProvider;
+use LaravelVerifyEmails\Auth\Console\MakeVerifyEmailsCommand;
 use LaravelVerifyEmails\Auth\VerifyEmails\DatabaseTokenRepository as DbRepository;
 
 class VerifyEmailServiceProvider extends ServiceProvider
@@ -24,6 +25,10 @@ class VerifyEmailServiceProvider extends ServiceProvider
         $this->registerVerifyEmailBroker();
 
         $this->registerTokenRepository();
+
+        $this->app->singleton('command.verify_email.make', function ($app) {
+            return new MakeVerifyEmailsCommand;
+        });
     }
 
     /**
@@ -80,6 +85,6 @@ class VerifyEmailServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['auth.verify_email', 'auth.verify_email.tokens'];
+        return ['auth.verify_email', 'auth.verify_email.tokens', 'command.verify_email.make'];
     }
 }
