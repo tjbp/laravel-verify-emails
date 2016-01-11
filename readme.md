@@ -21,7 +21,7 @@ Add the following to `config/auth.php`:
 'verify_emails' => [
     'users' => [
         'provider' => 'users',
-        'email' => 'emails.verify',
+        'email' => 'auth.emails.verify',
         'table' => 'email_tokens',
         'expire' => 60,
     ],

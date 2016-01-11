@@ -16,7 +16,7 @@ trait VerifiesEmails
      */
     public function getUnverified()
     {
-        return view('auth.unverified-email');
+        return view('auth.verify-emails.unverified');
     }
 
     /**
