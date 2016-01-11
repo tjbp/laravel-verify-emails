@@ -52,7 +52,7 @@ class VerifyEmailServiceProvider extends ServiceProvider
         return [
             'auth.verify_emails',
             'auth.verify_emails.broker',
-            'command.verify_emails.make'
+            'command.verify_emails.make',
         ];
     }
 }
