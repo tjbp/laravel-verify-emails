@@ -19,8 +19,8 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     <i class="fa fa-btn fa-envelope"></i>Resend Email Verification Link
                                 </button>
                             </div>
