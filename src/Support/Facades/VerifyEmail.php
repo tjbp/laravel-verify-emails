@@ -1,6 +1,7 @@
 <?php
 
 namespace LaravelVerifyEmails\Support\Facades;
+use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \LaravelVerifyEmails\Auth\VerifyEmails\VerifyEmailBroker
@@ -35,6 +36,6 @@ class VerifyEmail extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'auth.verify_email';
+        return 'auth.verify_emails';
     }
 }
