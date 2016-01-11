@@ -1,6 +1,4 @@
 
 Route::group(['middleware' => 'web'], function () {
-    Route::group(['middleware' => 'web'], function () {
-        Route::controller('email', '\App\Http\Controllers\Auth\EmailController');
-    });
+    Route::controller('email', '\App\Http\Controllers\Auth\EmailController');
 });
