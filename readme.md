@@ -38,7 +38,7 @@ Add the `LaravelVerifyEmails\Auth\VerifyEmails\VerifyEmailServiceProvider::class
 
 Run `php artisan make:verify-emails` to generate views, routes and a controller. Alternatively, use the `LaravelVerifyEmails\Foundation\Auth\VerifiesEmails` trait in a controller of your choice.
 
-Finally, call `$user->unverify()` to mark the user as unverified and send a verification token to their email address. To catch unverified users, replace the `auth` route middleware in `App\Http\Kernel` with `LaravelVerifyEmails\Auth\Middleware\AuthenticateAndVerifyEmail`. If you'd rather use your own middleware, or want to check if a user is verified elsewhere, call `$user->isVerified()`.
+Finally, call `$user->unverify()` to mark the user as unverified and send a verification token to their email address. To catch unverified users, replace the `auth` route middleware in `App\Http\Kernel` with `\LaravelVerifyEmails\Auth\Middleware\AuthenticateAndVerifyEmail::class`. If you'd rather use your own middleware, or want to check if a user is verified elsewhere, call `$user->isVerified()`.
 
 ## Licence
 
