@@ -1,4 +1,6 @@
 
 Route::group(['middleware' => 'web'], function () {
-    Route::controller('email', '\App\Http\Controllers\Auth\EmailController');
+    Route::get('email/unverified', 'Auth\EmailController@getUnverified');
+    Route::post('email/resend', 'Auth\EmailController@postResend');
+    Route::get('email/verify', 'Auth\EmailController@getVerify');
 });
