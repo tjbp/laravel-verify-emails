@@ -45,6 +45,14 @@ class MakeVerifyEmailsCommand extends Command
 
         copy(__DIR__.'/stubs/make/controllers/EmailController.stub', app_path('Http/Controllers/Auth/EmailController.php'));
 
+        $this->info('Updated Routes File.');
+
+        file_put_contents(
+            app_path('Http/routes.php'),
+            file_get_contents(__DIR__.'/stubs/make/routes.stub'),
+            FILE_APPEND
+        );
+
         $this->comment('Email verification scaffolding generated successfully!');
     }
 

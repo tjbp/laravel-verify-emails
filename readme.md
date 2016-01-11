@@ -34,7 +34,9 @@ Change the password.table setting to `email_tokens` too, allowing password reset
 
 Implement the `LaravelVerifyEmails\Contracts\Auth\CanVerifyEmail` contract in your `App\User` model and use the `LaravelVerifyEmails\Auth\VerifyEmails\CanVerifyEmail` trait to include the necessary methods. By default, a boolean column on your users table named `verified` is expected. This behaviour can be altered by overriding the methods in the trait.
 
-Run `php artisan make:verify-emails` to generate views and a controller, then add `Route::controller('email', 'App\Http\Controllers\Auth\EmailController')` to your routes. Alternatively, use the `LaravelVerifyEmails\Foundation\Auth\VerifiesEmails` trait in a controller of your choice.
+Add the `LaravelVerifyEmails\Auth\VerifyEmails\VerifyEmailServiceProvider::class` service provider to the `providers` array in `config/app.php`.
+
+Run `php artisan make:verify-emails` to generate views, routes and a controller. Alternatively, use the `LaravelVerifyEmails\Foundation\Auth\VerifiesEmails` trait in a controller of your choice.
 
 Finally, call `$user->unverify()` to mark the user as unverified and send a verification token to their email address. To catch unverified users, replace the `auth` route middleware in `App\Http\Kernel` with `LaravelVerifyEmails\Auth\Middleware\AuthenticateAndVerifyEmail`. If you'd rather use your own middleware, or want to check if a user is verified elsewhere, call `$user->isVerified()`.
 
