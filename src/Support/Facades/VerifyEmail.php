@@ -1,6 +1,7 @@
 <?php
 
 namespace LaravelVerifyEmails\Support\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 /**
