@@ -28,7 +28,7 @@ Add the following to `config/auth.php`:
 ],
 ```
 
-Change the password.table setting to `email_tokens` too, allowing password reset and email verification tokens to use the same table. Alternatively, create a new table for the email verification tokens using the same definitions as your password resets table and configure the above accordingly.
+Change the `passwords.users.table` setting to `email_tokens` too, allowing password reset and email verification tokens to use the same table. Alternatively, create a new table for the email verification tokens using the same definitions as your password resets table and configure the above accordingly.
 
 ## Usage
 
