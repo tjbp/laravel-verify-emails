@@ -18,10 +18,13 @@ This package is installable [with Composer via Packagist](https://packagist.org/
 Add the following to `config/auth.php`:
 
 ```php
-'verify_email' => [
-    'email' => 'emails.verify',
-    'table' => 'email_tokens',
-    'expire' => 60,
+'verify_emails' => [
+    'users' => [
+        'provider' => 'users',
+        'email' => 'emails.verify',
+        'table' => 'email_tokens',
+        'expire' => 60,
+    ],
 ],
 ```
 
@@ -33,7 +36,7 @@ Implement the `LaravelVerifyEmails\Contracts\Auth\CanVerifyEmail` contract in yo
 
 Run `php artisan make:verify-emails` to generate views and a controller, then add `Route::controller('email', 'App\Http\Controllers\Auth\EmailController')` to your routes. Alternatively, use the `LaravelVerifyEmails\Foundation\Auth\VerifiesEmails` trait in a controller of your choice.
 
-Finally, call `$user->unverify()` to mark the user as unverified and send a verification token to their email address. To catch unverified users, replace the `auth` route middleware in `Http\Kernel` with `LaravelVerifyEmails\Auth\Middleware\AuthenticateAndVerifyEmail`. If you'd rather use your own middleware, or want to check if a user is verified elsewhere, call `$user->isVerified()`.
+Finally, call `$user->unverify()` to mark the user as unverified and send a verification token to their email address. To catch unverified users, replace the `auth` route middleware in `App\Http\Kernel` with `LaravelVerifyEmails\Auth\Middleware\AuthenticateAndVerifyEmail`. If you'd rather use your own middleware, or want to check if a user is verified elsewhere, call `$user->isVerified()`.
 
 ## Licence
 

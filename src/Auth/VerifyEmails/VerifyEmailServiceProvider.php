@@ -26,9 +26,7 @@ class VerifyEmailServiceProvider extends ServiceProvider
 
         $this->registerTokenRepository();
 
-        $this->app->singleton('command.verify_email.make', function ($app) {
-            return new MakeVerifyEmailsCommand;
-        });
+        $this->commands(MakeVerifyEmailsCommand::class);
     }
 
     /**
@@ -38,15 +36,15 @@ class VerifyEmailServiceProvider extends ServiceProvider
      */
     protected function registerVerifyEmailBroker()
     {
-        $this->app->singleton('auth.verify_email', function ($app) {
+        $this->app->singleton('auth.verify_emails', function ($app) {
             // The token repository is responsible for storing the email addresses and
             // email verification tokens. It will be used to verify the tokens are valid
             // for the given e-mail addresses. We will resolve an implementation here.
-            $tokens = $app['auth.verify_email.tokens'];
+            $tokens = $app['auth.verify_emails.users.tokens'];
 
             $users = $app['auth']->driver()->getProvider();
 
-            $view = $app['config']['auth.verify_email.email'];
+            $view = $app['config']['auth.verify_emails.users.email'];
 
             // The verify email broker uses a token repository to validate tokens, as well
             // as validating that email verification process as an aggregate service of
@@ -62,17 +60,17 @@ class VerifyEmailServiceProvider extends ServiceProvider
      */
     protected function registerTokenRepository()
     {
-        $this->app->singleton('auth.verify_email.tokens', function ($app) {
+        $this->app->singleton('auth.verify_emails.tokens', function ($app) {
             $connection = $app['db']->connection();
 
             // The database token repository is an implementation of the token repository
             // interface, and is responsible for the actual storing of auth tokens and
             // their e-mail addresses. We will inject this table and hash key to it.
-            $table = $app['config']['auth.verify_email.table'];
+            $table = $app['config']['auth.verify_emails.users.table'];
 
             $key = $app['config']['app.key'];
 
-            $expire = $app['config']->get('auth.verify_email.expire', 60);
+            $expire = $app['config']->get('auth.verify_emails.users.expire', 60);
 
             return new DbRepository($connection, $table, $key, $expire);
         });
@@ -85,6 +83,6 @@ class VerifyEmailServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['auth.verify_email', 'auth.verify_email.tokens', 'command.verify_email.make'];
+        return ['auth.verify_emails', 'auth.verify_emails.tokens', 'command.verify_emails.make'];
     }
 }

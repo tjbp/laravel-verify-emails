@@ -18,7 +18,7 @@ class MakeVerifyEmailsCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Scaffold email verification views';
+    protected $description = 'Scaffold email verification views and controller';
 
     /**
      * THe views that need to be exported.
@@ -45,7 +45,7 @@ class MakeVerifyEmailsCommand extends Command
 
         copy(__DIR__.'/stubs/make/controllers/EmailController.stub', app_path('Http/Controllers/Auth/EmailController.php'));
 
-        $this->comment('Email verification views generated successfully!');
+        $this->comment('Email verification scaffolding generated successfully!');
     }
 
     /**
