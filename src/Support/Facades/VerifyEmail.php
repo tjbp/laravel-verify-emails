@@ -14,21 +14,21 @@ class VerifyEmail extends Facade
      *
      * @var string
      */
-    const VERIFY_LINK_SENT = 'verify_email.sent';
+    const VERIFY_LINK_SENT = 'verify_emails.sent';
 
     /**
      * Constant representing a successfully verified email address.
      *
      * @var string
      */
-    const EMAIL_VERIFIED = 'verify_email.verified';
+    const EMAIL_VERIFIED = 'verify_emails.verified';
 
     /**
      * Constant representing an invalid token.
      *
      * @var string
      */
-    const INVALID_TOKEN = 'verify_email.token';
+    const INVALID_TOKEN = 'verify_emails.token';
 
     /**
      * Get the registered name of the component.
