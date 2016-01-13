@@ -14,7 +14,7 @@ trait VerifiesEmails
      *
      * @return \Illuminate\Http\Response
      */
-    public function getUnverified()
+    public function showUnverifiedForm()
     {
         return view('auth.verify-emails.unverified');
     }
@@ -25,7 +25,7 @@ trait VerifiesEmails
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postResend(Request $request)
+    public function resend(Request $request)
     {
         $user = Auth::user();
 
@@ -49,7 +49,7 @@ trait VerifiesEmails
      * @param  string  $token
      * @return \Illuminate\Http\Response
      */
-    public function getVerify($token)
+    public function verify($token)
     {
         $response = VerifyEmail::verify(Auth::user(), $token);
 
