@@ -1,6 +1,6 @@
 {
     "name": "tjbp/laravel-verify-emails",
-    "description": "Verify email addresses in Laravel using the same pattern as password resets.",
+    "description": "Verify email addresses in Laravel <5.7 using the same pattern as password resets.",
     "keywords": ["email", "verify", "verification", "laravel", "illuminate"],
     "license": "MIT",
     "authors": [

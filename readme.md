@@ -9,6 +9,8 @@
 
 This package allows you to verify account emails in Laravel using the same pattern as password resets.
 
+DEPRECATED: Email verification was implemented in the Laravel Framework for the release of 5.7 - if you're using 5.7 or above this package is unnecessary, and won't be developed further in the future.
+
 ## Installation
 
 This package is installable [with Composer via Packagist](https://packagist.org/packages/tjbp/laravel-verify-emails).
